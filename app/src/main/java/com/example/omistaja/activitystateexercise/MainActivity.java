@@ -1,6 +1,7 @@
 package com.example.omistaja.activitystateexercise;
 
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,13 +24,13 @@ public class MainActivity extends Activity implements TextEntryDialogFragment.Te
 
     }
     @Override
-    public void onSaveInstanceState(Bundle saveInstanceState) {
-        // Toast.makeText(getBaseContext(), "onSaveInstanceState",
-        Toast.LENGTH_SHORT.show();
-        // get text view
+    public void onDialogPositiveClick(DialogFragment dialog, String text) {
         TextView textView = (TextView) findViewById(R.id.textView1);
-        // save text view state
-        saveInstanceState.putString(TEXTVIEW_STATEKEY, textView.getText().toString());
+        textView.setText(text);
     }
-
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
+        Toast.makeText(getApplicationContext(), "Cancel",
+                Toast.LENGTH_SHORT).show();
+    }
 }

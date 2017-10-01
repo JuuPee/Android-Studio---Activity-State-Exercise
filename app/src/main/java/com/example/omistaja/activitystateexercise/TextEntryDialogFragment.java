@@ -1,5 +1,20 @@
-public class TextEntryDialogFragment extends DialogFragment {
-    // send data to host with listeners
+package com.example.omistaja.activitystateexercise;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.EditText;
+
+/**
+ * Created by Omistaja on 1.10.2017.
+ */
+
+public class TextEntryDialogFragment extends DialogFragment {// send data to host with listeners
     public interface TextEntryDialogListener {
         public void onDialogPositiveClick(DialogFragment dialog, String text);
         public void onDialogNegativeClick(DialogFragment dialog);
